@@ -6,6 +6,7 @@
         <service id="zicher_mail_message.factory" class="Zicher\MailMessage\Factory" public="true">
             <argument type="service" id="zicher_mail_message.message.swift"/>
             <argument type="collection">
+                <argument type="service" id="zicher_mail_message.processor.twig_renderer"/>
                 <argument type="service" id="zicher_mail_message.processor.css_inline"/>
             </argument>
         </service>
