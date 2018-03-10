@@ -1,0 +1,43 @@
+{
+  "name": "zicher/mail-message-bundle",
+  "description": "Symfony bundle for Mail message library.",
+  "homepage": "https://github.com/zicher-eu/mail-message-bundle",
+  "keywords": [
+    "mail",
+    "css",
+    "swift",
+    "twig",
+    "bundle"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomasz Kotlarek",
+      "email": "tomasz.kotlarek@zicher.eu"
+    }
+  ],
+  "type": "symfony-bundle",
+  "require": {
+    "php": ">=7.0",
+    "zicher/mail-message": "^1.0",
+    "symfony/dependency-injection": "^3.4|^4.0",
+    "symfony/http-kernel": "^3.4|^4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0",
+    "symfony/framework-bundle": "^3.4|^4.0",
+    "symfony/twig-bundle": "^3.4|^4.0",
+    "symfony/swiftmailer-bundle": "^3.2",
+    "tijsverkoyen/css-to-inline-styles": "^2.2"
+  },
+  "suggest": {
+    "symfony/swiftmailer-bundle": "",
+    "symfony/twig-bundle": ""
+  },
+  "autoload": {
+    "psr-4": { "Zicher\\MailMessageBundle\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  }
+}

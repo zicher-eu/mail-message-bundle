@@ -1,0 +1,26 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="zicher_mail_message.factory" class="Zicher\MailMessage\Factory" public="true">
+            <argument type="service" id="zicher_mail_message.message.swift"/>
+            <argument type="collection">
+                <argument type="service" id="zicher_mail_message.processor.css_inline"/>
+            </argument>
+        </service>
+
+        <service id="zicher_mail_message.message.swift" class="Zicher\MailMessage\Message\SwiftMessage">
+            <argument type="service" id="zicher_mail_message.message.swift.swift_message"/>
+        </service>
+        <service id="zicher_mail_message.message.swift.swift_message" class="\Swift_Message" shared="false"/>
+
+        <service id="zicher_mail_message.processor.twig_renderer" class="Zicher\MailMessage\Processor\TwigRendererProcessor">
+            <argument type="service" id="twig" on-invalid="null"/>
+        </service>
+        <service id="zicher_mail_message.processor.css_inline" class="Zicher\MailMessage\Processor\CssInlineProcessor">
+            <argument type="service" id="zicher_mail_message.processor.css_inline.css_to_inline_styles"/>
+        </service>
+        <service id="zicher_mail_message.processor.css_inline.css_to_inline_styles" class="TijsVerkoyen\CssToInlineStyles\CssToInlineStyles" shared="false"/>
+    </services>
+</container>
