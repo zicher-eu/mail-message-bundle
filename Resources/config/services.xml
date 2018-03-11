@@ -11,7 +11,7 @@
             </argument>
         </service>
 
-        <service id="zicher_mail_message.message.swift" class="Zicher\MailMessage\Message\SwiftMessage">
+        <service id="zicher_mail_message.message.swift" class="Zicher\MailMessage\Message\SwiftMessage" shared="false">
             <argument type="service" id="zicher_mail_message.message.swift.swift_message"/>
         </service>
         <service id="zicher_mail_message.message.swift.swift_message" class="\Swift_Message" shared="false"/>
