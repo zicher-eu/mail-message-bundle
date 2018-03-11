@@ -3,7 +3,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="zicher_mail_message.factory" class="Zicher\MailMessage\Factory" public="true">
+        <service id="zicher_mail_message.factory" class="Zicher\MailMessage\Factory" shared="false" public="true">
             <argument type="service" id="zicher_mail_message.message.swift"/>
             <argument type="collection">
                 <argument type="service" id="zicher_mail_message.processor.twig_renderer"/>
